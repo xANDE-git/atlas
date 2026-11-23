@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.env
+*.log
+videos/whatsapp/*.mp4
+prototipos/*
+!prototipos/.gitkeep
