@@ -43,7 +43,7 @@ http.createServer(function (req, res) {
     if (partes[0] === "abrir-pasta") {
       cp.spawn("explorer.exe", ["/select,\"" + arq + "\""], { windowsVerbatimArguments: true, detached: true, stdio: "ignore" }).unref();
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-      return res.end("<!doctype html><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>Explorer aberto</title><body style=\"font:22px system-ui;display:grid;place-items:center;height:90vh;text-align:center\"><div><b>Explorer aberto com o vídeo selecionado.</b><br>Aperte Ctrl+C lá, feche esta aba e cole (Ctrl+V) no WhatsApp.</div>");
+      return res.end("<!doctype html><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1\"><title>Explorer aberto</title><body style=\"font:22px system-ui;display:grid;place-items:center;height:90vh;text-align:center\"><div><b>Explorer aberto com o vídeo selecionado.</b><br>Aperte Ctrl+C lá, feche esta aba e cole (Ctrl+V) no WhatsApp.</div><script>setTimeout(function(){window.close();},400);</script>");
     }
     return responde(res, 404, "Rota desconhecida.");
   }
